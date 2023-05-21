@@ -4,18 +4,29 @@ let code={
 let result=[];
 function letterCombinations(input_digit) {
   //Complete the function
-	solve(str(input_digit),0,"")
-}
-function solve(input_string,index,calculatedString){
+	// solve(str(input_digit),0,"")
+	let input_string=str(input_digit);
+	let index=0;
+	let calculatedString="";
 	if(index>=input_string.length){
 		result.push(calculatedString);
 		return;
-	}
+		}
 	let currString=mapping[input_string[index]];
 	for(let i=0;i<currString.length;i++){
 		solve(input_string,index+1,calculatedString+currString[i]);
 	}
 }
+// function solve(input_string,index,calculatedString){
+// 	if(index>=input_string.length){
+// 		result.push(calculatedString);
+// 		return;
+// 	}
+// 	let currString=mapping[input_string[index]];
+// 	for(let i=0;i<currString.length;i++){
+// 		solve(input_string,index+1,calculatedString+currString[i]);
+// 	}
+// }
 
 
 module.exports = letterCombinations;
